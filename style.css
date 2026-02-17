@@ -1,0 +1,11 @@
+.raleway-normal > {
+  font-family: "Raleway", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+}
+
+.banner-image {
+  background-image:
+    linear-gradient(to right, rgba(0, 0, 0, 0.9), rgba(0, 0, 0, 0)),
+    url("./Assets/banner-image.png");
+}
