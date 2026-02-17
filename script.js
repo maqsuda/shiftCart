@@ -12,9 +12,9 @@ const displayCategory = (products) => {
   for (let data of firstThree) {
     const btnDiv = document.createElement("div");
     btnDiv.innerHTML = `
-<div class="card bg-base-100 w-96 shadow-sm">
+<div class=" bg-base-100 shadow-sm mb-5">
                     <figure>
-                        <img class="h-[250px]" src=${data.image}
+                        <img class="h-[250px] w-[250px] px-5" src=${data.image}
                             alt="Shoes" />
                     </figure>
                     <div class="card-body">
@@ -26,9 +26,9 @@ const displayCategory = (products) => {
                         <p>${data.title}
                         </p>
                         <p class="font-bold">$${data.price}</p>
-                        <div class="flex justify-between items-center">
-                            <div class="btn hover:bg-blue-700 hover:text-white px-10"><i class="fa-regular fa-eye"></i>Details</div>
-                            <div class="btn hover:bg-blue-700 hover:text-white px-10"><i class="fa-solid fa-cart-plus"></i>Add</div>
+                        <div class="flex justify-between items-center gap-5">
+                            <div class="btn btn-outline hover:bg-blue-700 hover:text-white px-8"><i class="fa-regular fa-eye"></i>Details</div>
+                            <div class="btn btn-outline hover:bg-blue-700 hover:text-white px-8"><i class="fa-solid fa-cart-plus"></i>Add</div>
                         </div>
                     </div>
                 </div>
