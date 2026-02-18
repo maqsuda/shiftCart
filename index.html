@@ -26,7 +26,7 @@
 <body class="raleway-normal w-full mx-auto">
     <!-- <header Part-->
     <header class=" w-10/12 mx-auto">
-        <div class="navbar ">
+        <div class="navbar sticky top-0 ">
             <div class="navbar-start">
                 <div class="dropdown">
                     <div tabindex="0" role="button" class="btn btn-ghost lg:hidden">
@@ -48,8 +48,10 @@
             </div>
             <div class="navbar-center hidden lg:flex">
                 <ul class="menu menu-horizontal px-1  ">
-                    <li class="hover:text-blue-700  hover:font-bold"><a>Home</a></li>
-                    <li class="hover:text-blue-700 hover:font-bold "><a>Product</a></li>
+                    <li id="btn-home" class="text-blue-500 font-bold"><a>Home</a></li>
+                    <li id="btn-product" onclick="displayAllCategory()" class="hover:text-blue-700 hover:font-bold ">
+                        <a>Product</a>
+                    </li>
                     <li class="hover:text-blue-700 hover:font-bold"><a>About</a></li>
                     <li class="hover:text-blue-700 hover:font-bold"><a>Contacts</a></li>
 
@@ -65,7 +67,7 @@
     <main>
         <!-- Banner Part -->
 
-        <div class="hero h-[500px] banner-image ">
+        <div id="banner-container" class="hero h-[500px] banner-image ">
             <!-- style="background-image: 
             linear-gradient(to right, rgba(0,0,0,0.9), rgba(0,0,0,0)),
             url(./Assets/banner-image.png);">
@@ -85,7 +87,7 @@
 
         <!-- Why choose Us -->
 
-        <div class=" py-10 bg-base-200">
+        <div id="choose-container" class="py-10 bg-base-200">
             <h2 class="text-4xl font-bold text-center">Why Choose Us</h2>
             <p class="text-center py-5">We provide the best shopping experience with top-notch service</p>
 
@@ -146,7 +148,7 @@
 
         <!-- Trending Now -->
 
-        <div class="bg-white w-10/12 mx-auto py-10">
+        <div id="trending-container" class="bg-white w-10/12 mx-auto py-10">
             <h1 class="mb-5 text-4xl font-bold pt-5">Trending Now</h1>
             <p></p>
 
@@ -160,6 +162,17 @@
 
         </div>
 
+        <!-- All product -->
+
+        <div id="allProduct-container" hidden class="w-10/12 mx-auto">
+            <p class="text-4xl text-center font-bold py-10">Our Products</p>
+
+            <div id="allProduct-content" class="flex justify-center items-center gap-5">
+
+            </div>
+
+
+        </div>
 
 
     </main>

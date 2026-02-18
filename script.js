@@ -3,6 +3,36 @@ const loadProduct = () => {
     .then((res) => res.json())
     .then((data) => displayProduct(data));
 };
+
+const loadCategory = () => {
+  fetch("https://fakestoreapi.com/products/categories")
+    .then((res) => res.json())
+    .then((data) => displayCategory(data));
+};
+
+const loadProductCategoryWise = () => {
+  fetch("https://fakestoreapi.com/products/categories/${category}")
+    .then((res) => res.json())
+    .then((data) => displayCategory(data));
+};
+
+
+
+const displayCategory = (categories) => {
+  for (let category of categories) {
+    const allProductContent = document.getElementById("allProduct-content");
+    const btnDiv = document.createElement("div");
+    btnDiv.innerHTML = "";
+    btnDiv.innerHTML = `
+     <div class="mb-5">
+     <button class="btn btn-outline rounded-full">${category}</button>
+     </div>
+    `;
+
+    allProductContent.append(btnDiv);
+  }
+};
+
 const displayProduct = (products) => {
   const filtered = products.filter((product) => product.rating.rate <= 4);
   const firstThree = filtered.slice(0, 3);
@@ -37,4 +67,34 @@ const displayProduct = (products) => {
   }
 };
 
+const hideAndShow = () => {
+  const bannerContainer = document
+    .getElementById("banner-container")
+    .classList.add("hidden");
+
+  const chooseContainer = document
+    .getElementById("choose-container")
+    .classList.add("hidden");
+
+  const trendingContainer = document
+    .getElementById("trending-container")
+    .classList.add("hidden");
+};
+
+const displayAllCategory = () => {
+  hideAndShow();
+  const btnHome = document.getElementById("btn-home");
+  btnHome.classList.remove("text-blue-500", "font-bold");
+
+  const btnProduct = document.getElementById("btn-product");
+  btnProduct.classList.add("text-blue-500", "font-bold");
+
+  const allProductContainer = document.getElementById("allProduct-container");
+  allProductContainer.removeAttribute("hidden");
+  // .removeAttribute("hidden");
+
+  loadCategory();
+};
+
 loadProduct();
+// loadCategory();
