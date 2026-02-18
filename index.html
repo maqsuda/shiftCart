@@ -26,7 +26,7 @@
 <body class="raleway-normal w-full mx-auto">
     <!-- <header Part-->
     <header class=" w-10/12 mx-auto">
-        <div class="navbar sticky top-0 ">
+        <div class="navbar  ">
             <div class="navbar-start">
                 <div class="dropdown">
                     <div tabindex="0" role="button" class="btn btn-ghost lg:hidden">
@@ -48,7 +48,7 @@
             </div>
             <div class="navbar-center hidden lg:flex">
                 <ul class="menu menu-horizontal px-1  ">
-                    <li id="btn-home" class="text-blue-500 font-bold"><a>Home</a></li>
+                    <li id="btn-home" onclick="homebtn()" class="text-blue-500 font-bold"><a>Home</a></li>
                     <li id="btn-product" onclick="displayAllCategory()" class="hover:text-blue-700 hover:font-bold ">
                         <a>Product</a>
                     </li>
@@ -59,7 +59,7 @@
                 </ul>
             </div>
             <div class="navbar-end">
-                <i class="fa-solid fa-cart-plus"></i>
+                <i class="fa-solid fa-cart-plus"></i><span id="countCart">( 0 )</span>
             </div>
         </div>
     </header>
@@ -164,13 +164,16 @@
 
         <!-- All product -->
 
-        <div id="allProduct-container" hidden class="w-10/12 mx-auto">
+        <div id="allProduct-container" class="w-10/12 mx-auto ">
             <p class="text-4xl text-center font-bold py-10">Our Products</p>
 
             <div id="allProduct-content" class="flex justify-center items-center gap-5">
-
+                <button id="btn-all" class="btn btn-outline rounded-full mb-5 text-blue-700 font-bold">All</button>
             </div>
 
+            <div id="product-container" class="grid grid-cols-1 md:grid-cols-4 justify-between items-center gap-5 ">
+
+            </div>
 
         </div>
 
@@ -242,6 +245,22 @@
 
 
     </footer>
+
+
+    <!-- <button class="btn" onclick="my_modal_5.showModal()">open modal</button> -->
+    <dialog id="my_modal_5" class="modal modal-bottom sm:modal-middle">
+        <div class="modal-box">
+            <h3 class="text-lg font-bold">Hello!</h3>
+            <p class="py-4">Press ESC key or click the button below to close</p>
+            <div class="modal-action">
+                <form method="dialog">
+                    <!-- if there is a button in form, it will close the modal -->
+                    <button class="btn">Close</button>
+                </form>
+            </div>
+        </div>
+    </dialog>
+
 
 </body>
 <link rel="stylesheet" href="./style.css">
