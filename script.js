@@ -118,7 +118,7 @@ const homebtn = () => {
 
 const displayAllCategory = (products) => {
   hideAndShow();
-
+  // loadAllProduct();
   const btnHome = document.getElementById("btn-home");
   btnHome.classList.remove("text-blue-500", "font-bold");
 
