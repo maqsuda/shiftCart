@@ -1,9 +1,9 @@
-const loadCategory = () => {
+const loadProduct = () => {
   fetch("https://fakestoreapi.com/products")
     .then((res) => res.json())
-    .then((data) => displayCategory(data));
+    .then((data) => displayProduct(data));
 };
-const displayCategory = (products) => {
+const displayProduct = (products) => {
   const filtered = products.filter((product) => product.rating.rate <= 4);
   const firstThree = filtered.slice(0, 3);
   //   console.log(firstThree);
@@ -13,8 +13,8 @@ const displayCategory = (products) => {
     const btnDiv = document.createElement("div");
     btnDiv.innerHTML = `
 <div class=" bg-base-100 shadow-sm mb-5">
-                    <figure>
-                        <img class="h-[250px] w-[250px] px-5" src=${data.image}
+                    <figure class="bg-gray-100 flex justify-center items-center">
+                        <img class="h-[250px] w-[250px] px-5 items-center" src=${data.image}
                             alt="Shoes" />
                     </figure>
                     <div class="card-body">
@@ -37,4 +37,4 @@ const displayCategory = (products) => {
   }
 };
 
-loadCategory();
+loadProduct();
